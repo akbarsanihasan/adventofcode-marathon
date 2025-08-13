@@ -45,7 +45,13 @@ func data_fision(log_marks []string) ([]string, []string) {
 }
 
 func main() {
-	dat, err := os.ReadFile("/media/Datacenter/CS/adventofcode-marathon/2015/day3/input.txt")
+	cwd, err := os.Getwd()
+
+	if err != nil {
+		panic(err)
+	}
+
+	dat, err := os.ReadFile(cwd + "/2015/day3/input.txt")
 
 	if err != nil {
 		log.Fatal(err)
